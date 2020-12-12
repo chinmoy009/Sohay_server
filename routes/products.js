@@ -8,15 +8,13 @@ router.get('/', (req, res, next) => {
     res.json(data);
 });
 
+router.get('/:id', (req, res, next) => {
+    const product = data.products.find(product => product._id === req.params.id);
+    if(product) {
+        res.json(product);
+    } else {
+        res.status(404).send({message: "Products not found"});
+    }
+})
+
 module.exports = router;
-
-// var express = require('express');
-// // import express from 'express';
-// var router = express.Router();
-
-// /* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
-
-// module.exports = router;
