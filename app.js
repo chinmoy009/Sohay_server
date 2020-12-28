@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var dotenv = require('dotenv');
 
 // import createError from 'http-errors';
 // import express from 'express';
@@ -20,6 +21,8 @@ var productsRouter = require('./routes/products');
 // import productsRouter from '/routes/products';
 
 
+
+dotenv.config();
 
 var app = express();
 
