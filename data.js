@@ -17,8 +17,7 @@ exports.data = {
     ],
     products: [
         {
-            _id: "1",
-            name: "Slim Shirt",
+            name: "Slim Shirt1",
             category: "Shirt",
             price: 2150,
             brand: "Cat's Eye",
@@ -29,8 +28,7 @@ exports.data = {
             countInStock: 10
         },
         {
-            _id: "2",
-            name: "Slim Shirt",
+            name: "Slim Shirt2",
             category: "Shirt",
             price: 850,
             brand: "Yellow",
@@ -41,8 +39,7 @@ exports.data = {
             countInStock: 10
         },
         {
-            _id: "3",
-            name: "Slim Shirt",
+            name: "Slim Shirt3",
             category: "Shirt",
             price: 1599,
             brand: "Plus Point",
@@ -53,8 +50,7 @@ exports.data = {
             countInStock: 0
         },
         {
-            _id: "4",
-            name: "Slim Pant",
+            name: "Slim Pant1",
             category: "Pant",
             price: 850,
             brand: "Cat's Eye",
@@ -65,8 +61,7 @@ exports.data = {
             countInStock: 10
         },
         {
-            _id: "5",
-            name: "Slim Pant",
+            name: "Slim Pant2",
             category: "Pant",
             price: 900,
             brand: "Yellow",
@@ -77,8 +72,7 @@ exports.data = {
             countInStock: 10
         },
         {
-            _id: "6",
-            name: "Slim Pant",
+            name: "Slim Pant3",
             category: "Pant",
             price: 750,
             brand: "Plus Point",
