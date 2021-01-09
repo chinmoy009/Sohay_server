@@ -36,4 +36,30 @@ router.post('/signin', expressAsyncHandler(async (req, res, next) => {
   res.status(401).send({message: "Invalid Username or Password"})
 }));
 
+router.post('/signup', expressAsyncHandler(async (req, res, next) => {
+  const existingUsers = await User.find({email : req.body.email});
+  if(!existingUsers || existingUsers.length == 0) {
+    const user = new User({
+      username: req.body.username,
+      email: req.body.email,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      address: req.body.address,
+      phoneNumber: req.body.phoneNumber,
+      password: bcrypt.hashSync(req.body.password, 8)
+    });
+    const createdUser = await user.save();
+    res.send({
+      _id: createdUser._id,
+      name: createdUser.username,
+      email: createdUser.email,
+      isAdmin: createdUser.isAdmin,
+      token: generateToken(createdUser)
+    })
+    return;
+  }
+
+  res.status(401).send({message: "Duplicate User With Same Email Address"})
+}))
+
 module.exports = router;

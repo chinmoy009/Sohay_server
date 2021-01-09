@@ -9,6 +9,19 @@ const userSchema = new Mongoose.Schema({
         type: String,
         required: true
     },
+    firstname: {
+        type: String,
+    },
+    lastname: {
+        type: String,
+    },
+    address: {
+        type: String,
+    },
+    phoneNumber: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
