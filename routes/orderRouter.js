@@ -6,6 +6,19 @@ const Order = require('./../models/orderModel');
 const orderRouter = express.Router();
 
 
+orderRouter.get('/mine', isAuth, expressAsyncHandler(async(req, res) => {
+    const orderList = await Order.find({
+        user: req.user._id
+    });
+    if(orderList) {
+        res.send(orderList);
+    } else {
+        res.status(404).send({
+            message: "No Order has found"
+        })
+    }
+}));
+
 orderRouter.post('/', isAuth, expressAsyncHandler(async(req,res) => {
     if(!req.body.orderItems || req.body.orderItems.length == 0) {
         res.status(400).send({
@@ -39,6 +52,6 @@ orderRouter.get('/:id', isAuth, expressAsyncHandler(async(req, res) => {
             message: "Order not found"
         })
     }
-}))
+}));
 
 module.exports = orderRouter;
